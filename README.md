@@ -1,2 +1,91 @@
 # project-1-scientific-calculator
-A Scientific Calculator developed in C language that performs both basic and advanced mathematical operations. This project demonstrates the use of functions, conditional statements, loops, and mathematical libraries in C programming
+A Scientific Calculator developed in C language that performs both basic and advanced mathematical operations. This project demonstrates the use of functions, conditional statements, loops, and mathematical libraries in C programming.
+
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    int choice;
+    double a, b, result;
+
+    printf("===== Scientific Calculator =====\n");
+    printf("1. Addition\n");
+    printf("2. Subtraction\n");
+    printf("3. Multiplication\n");
+    printf("4. Division\n");
+    printf("5. Square Root\n");
+    printf("6. Power\n");
+    printf("7. Sine\n");
+    printf("8. Cosine\n");
+    printf("9. Log\n");
+
+    printf("\nEnter your choice: ");
+    scanf("%d", &choice);
+
+    switch(choice)
+    {
+        case 1:
+            printf("Enter two numbers: ");
+            scanf("%lf %lf", &a, &b);
+            printf("Result = %.2lf", a + b);
+            break;
+
+        case 2:
+            printf("Enter two numbers: ");
+            scanf("%lf %lf", &a, &b);
+            printf("Result = %.2lf", a - b);
+            break;
+
+        case 3:
+            printf("Enter two numbers: ");
+            scanf("%lf %lf", &a, &b);
+            printf("Result = %.2lf", a * b);
+            break;
+
+        case 4:
+            printf("Enter two numbers: ");
+            scanf("%lf %lf", &a, &b);
+
+            if(b != 0)
+                printf("Result = %.2lf", a / b);
+            else
+                printf("Division by zero not possible");
+            break;
+
+        case 5:
+            printf("Enter a number: ");
+            scanf("%lf", &a);
+            printf("Result = %.2lf", sqrt(a));
+            break;
+
+        case 6:
+            printf("Enter base and power: ");
+            scanf("%lf %lf", &a, &b);
+            printf("Result = %.2lf", pow(a, b));
+            break;
+
+        case 7:
+            printf("Enter angle in degrees: ");
+            scanf("%lf", &a);
+            printf("Result = %.2lf", sin(a * 3.14159 / 180));
+            break;
+
+        case 8:
+            printf("Enter angle in degrees: ");
+            scanf("%lf", &a);
+            printf("Result = %.2lf", cos(a * 3.14159 / 180));
+            break;
+
+        case 9:
+            printf("Enter a number: ");
+            scanf("%lf", &a);
+            printf("Result = %.2lf", log10(a));
+            break;
+
+        default:
+            printf("Invalid Choice!");
+    }
+
+    return 0;
+}
